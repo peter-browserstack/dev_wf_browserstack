@@ -35,9 +35,8 @@ node{
       input 'Waiting for Visual Testing analysis'
     }
   }
-  stage('JUnit Reporter') {
-    sh 'ls -lah app/karma_junit_reports/'
-    junit 'app/karma_junit_reports/*.xml'
+  stage('BrowserStackReporter') {
+
   }
 
   stage('Product Owner Review') {
