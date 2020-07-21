@@ -10,20 +10,20 @@ node{
   }
 
   stage ('Build') {
-    nodejs('nodejs-14.2') {
+  //  nodejs('nodejs-14.2') {
       //build project dependencies
       sh 'npm -v'
       sh 'npm install'
-    }
+   // }
   }
 
   stage ('Unit Tests') {
-    nodejs('nodejs-14.2') {
+   // nodejs('nodejs-14.2') {
       browserstack('007ecb9e-8b9e-453d-9e2e-cb9d4e894383') {
         //run KarmaJS tests and then exit process with singleRun command
         sh 'npm run test-single-run'
       }
-    }
+  //  }
   }
 
   stage('Execute E2E Tests on BS'){
