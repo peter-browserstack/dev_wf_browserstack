@@ -23,7 +23,7 @@ node{
     echo 'Place e2e test code here' 
     browserstack(credentialsId: 'browserstack_access_key',localConfig: [localOptions: '--verbose 3'])
                  //localPath: '/path/to/local'])
-                              
+      sh 'npm run wdio-bs-local'
     {
     // code for executing test cases
     }
