@@ -10,30 +10,24 @@ node{
   }
 
   stage ('Build') {
-  //  nodejs('nodejs-14.2') {
-      //build project dependencies
-      sh 'npm -v'
-      sh 'npm install'
-   // }
+    //build project dependencies
+    sh 'npm -v'
+    sh 'npm install'
   }
 
   stage ('Unit Tests') {
-   // nodejs('nodejs-14.2') {
-      //browserstack('007ecb9e-8b9e-453d-9e2e-cb9d4e894383') {
-        //run KarmaJS tests and then exit process with singleRun command
-        //sh 'npm run test-single-run'
-      //}
-  //  }
+     echo 'Place code for Unit Tests here'
   }
 
   stage('Execute E2E Tests on BS'){
-    echo 'Place e2e test code here'
-    // nodejs('nodejs-14.2') {
-       browserstack('browserstack_access_key') {
-      //     sh 'npm run wdio-bs'
-         echo 'got here'
-       } 
-    // }
+    echo 'Place e2e test code here' 
+    browserstack(credentialsId: 'browserstack_access_key',
+                 localConfig: [localOptions: '--force-local',
+                 //localPath: '/path/to/local'
+                              ])
+    {
+    // code for executing test cases
+    }
   }
   
 
