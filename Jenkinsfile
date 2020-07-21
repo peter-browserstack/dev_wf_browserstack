@@ -22,7 +22,7 @@ node{
   stage('Execute E2E Tests on BS'){
     echo 'Place e2e test code here' 
     browserstack(credentialsId: 'browserstack_access_key',
-                 localConfig: [localOptions: '--force-local',
+                 localConfig: [localOptions: 'forceLocal',
                  //localPath: '/path/to/local'
                               ])
     {
