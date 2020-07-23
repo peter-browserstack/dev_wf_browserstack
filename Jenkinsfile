@@ -24,7 +24,7 @@ node{
     browserstack(credentialsId: 'browserstack_access_key',localConfig: [localOptions: '--verbose 3'])
     {
        // code for executing test cases
-       sh 'npm run wdio-bs-local'
+       sh 'npm run wdio-bs-develop'
     }
   }
   
